@@ -1,0 +1,7 @@
+2020-08-11 13:29:28.049  INFO 12976 --- [main] c.e.d.SpringbootbasicexampleApplication  : Starting SpringbootbasicexampleApplication on LAPTOP-MC94B8P2 with PID 12976 (C:\Users\palli\Documents\pw\sprinboot\springbootbasicexample\target\classes started by palli in C:\Users\palli\Documents\pw\sprinboot\springbootbasicexample)
+2020-08-11 13:29:28.060 DEBUG 12976 --- [main] c.e.d.SpringbootbasicexampleApplication  : Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-11 13:29:28.060  INFO 12976 --- [main] c.e.d.SpringbootbasicexampleApplication  : No active profile set, falling back to default profiles: default
+2020-08-11 13:29:32.746  INFO 12976 --- [main] c.e.d.SpringbootbasicexampleApplication  : Started SpringbootbasicexampleApplication in 5.258 seconds (JVM running for 6.479)
+2020-08-11 13:29:38.069 DEBUG 12976 --- [http-nio-8080-exec-1] c.e.demo.controller.TradeController      : Got Incoming Request with the data:TradeEntity [id=0, stockSymbol=Infosys2, stockQuantity=30, stockType=x, stockPrice=2000.0, getId()=0, getStockSymbol()=Infosys2, getStockQuantity()=30, getStockType()=x, getStockPrice()=2000.0, getClass()=class com.example.demo.entity.TradeEntity, hashCode()=281475093, toString()=com.example.demo.entity.TradeEntity@10c6f815]
+2020-08-11 13:29:38.142 ERROR 12976 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_3yxwx5k3hugpfoao9er12j7ys"
+  Detail: Key (stock_symbol)=(Infosys2) already exists.
