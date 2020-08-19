@@ -38,6 +38,7 @@ public class TradeController {
 		}
 
 	}
+	
 
 	@GetMapping(value = "/viewById/{id}")
 	public ResponseEntity<?> getTradeById(@PathVariable int id) {
@@ -77,6 +78,24 @@ public class TradeController {
 		}
 
 	}
+	
+	
+	
+	@GetMapping(value = "/getStockFinanceBySymbol/{tradeSymbol}")
+	public ResponseEntity<?> getStockFinanceBySymbol(@PathVariable String tradeSymbol) {
+		Optional<TradeEntity> obj3 = tradeRepo.findByStockSymbol(tradeSymbol);
+
+		if (obj3.isPresent()) {
+			TradeEntity trade = obj3.get();
+			String output = trade.getStockPrice()+","+trade.getStockQuantity();
+			return new ResponseEntity<String>(output, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<HttpStatus>(HttpStatus.NOT_FOUND);
+		}
+
+	}
+	
+	
 
 	@GetMapping(value = "/getByStockType")
 	public ResponseEntity<?> getBystockType(String stockType) {
@@ -87,6 +106,9 @@ public class TradeController {
 			return new ResponseEntity<String>("No Entities found ", HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	
+	
 
 	@GetMapping(value ="/getstockByPrice")
 	public ResponseEntity<?> getStockByPrice(double stockPrice)
